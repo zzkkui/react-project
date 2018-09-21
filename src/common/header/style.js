@@ -62,18 +62,6 @@ export const SearchWrapper = styled.div`
       color: #fff;
     }
   }
-  .slide-enter {
-    transition: all .3s ease-out;
-  }
-  .slide-enter-active {
-    width: 240px;
-  }
-  .slide-exit {
-    transition: all .3s ease-in;
-  }
-  .slide-exit-active {
-    width: 160px;
-  }
   .fade-enter {
     transition: all .3s ease-out;
   }
@@ -108,6 +96,18 @@ export const NavSearch = styled.input.attrs({
   }
   &.focused {
     width: 240px;
+  }
+  &.slide-enter {
+    transition: all .3s ease-out;
+  }
+  &.slide-enter-active {
+    width: 240px;
+  }
+  &.slide-exit {
+    transition: all .3s ease-in;
+  }
+  &.slide-exit-active {
+    width: 160px;
   }
 `
 
