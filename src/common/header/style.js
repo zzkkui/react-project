@@ -111,6 +111,10 @@ export const NavSearch = styled.input.attrs({
   }
 `
 
+export const SearchInfo = styled.div`
+  
+`
+
 export const Addition = styled.div`
   position: absolute;
   right: 0;

@@ -9,9 +9,10 @@ import {
   NavSearch,
   Addition,
   Button,
-  SearchWrapper
+  SearchWrapper,
+  SearchInfo
 } from './style';
-import { searchInputFocused, searchInputBlur } from '../../store/actionCreator';
+import { actionCreator } from './store';
 
 const Header = (props) => (
   <Fragment>
@@ -41,8 +42,8 @@ const Header = (props) => (
             classNames='fade'>         
             <i className={props.focused ? 'focused iconfont' : 'iconfont'}>&#xe60c;</i>
           </CSSTransition>
-        </SearchWrapper>
-        
+          <SearchInfo></SearchInfo>
+        </SearchWrapper>        
       </Nav>
       <Addition>
         <Button className='writing'>
@@ -57,19 +58,18 @@ const Header = (props) => (
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    focused: state.focused
+    // focused: state.get('header').get('focused')
+    focused: state.getIn(['header', 'focused'])
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     searchInputFocused: () => {
-      const action = searchInputFocused();
-      dispatch(action)
+      dispatch(actionCreator.searchInputFocused())
     },
     searchInputBlur: () => {
-      const action = searchInputBlur();
-      dispatch(action)
+      dispatch(actionCreator.searchInputBlur())
     },
   }
 }
