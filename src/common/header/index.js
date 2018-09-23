@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { 
   HeaderWrapper, 
@@ -25,7 +26,9 @@ class Header extends Component {
     return (
       <Fragment>
         <HeaderWrapper>
-          <Logo></Logo>
+          <Link to='/'>
+            <Logo></Logo>
+          </Link>     
           <Nav>
             <NavItem className='left active'>首页</NavItem>
             <NavItem className='left'>下载APP</NavItem>
