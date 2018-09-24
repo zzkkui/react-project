@@ -3,7 +3,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './common/header';
 import store from './store/index';
-import { Home, Detail} from './pages';
+import { Home, LogIn, Write} from './pages';
+import Detail from './pages/detail/loadable';
 
 class App extends Component {
   render() {
@@ -13,7 +14,9 @@ class App extends Component {
           <Fragment>
             <Header/>
             <Route path='/' exact component={ Home }></Route>
-            <Route path='/detail' exact component={ Detail }></Route>
+            <Route path='/logIn' exact component={ LogIn }></Route>
+            <Route path='/write' exact component={ Write }></Route>
+            <Route path='/detail/:id' exact component={ Detail }></Route>
           </Fragment>      
         </BrowserRouter>      
       </Provider>
